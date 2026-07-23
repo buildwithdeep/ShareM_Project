@@ -9,12 +9,16 @@ import axios from "axios";
 
 // Get API URL from .env or use default
 const API_URL =
-    import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+    import.meta.env.VITE_API_URL;
+
+if (!API_URL) {
+    throw new Error("VITE_API_URL is not configured");
+}
 
 console.log(`🔌 API URL: ${API_URL}`);
 
 const api = axios.create({
-    baseURL: "http://localhost:5000/api",
+    baseURL: API_URL, // ✅ FIXED: ab .env ka VITE_API_URL use hoga, hardcoded localhost nahi
     timeout: 30000,
     headers: {
         "Content-Type": "application/json",
