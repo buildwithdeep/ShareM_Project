@@ -1,0 +1,32 @@
+{
+    "name": "ai-stock-research-backend",
+    "version": "1.0.0",
+    "description": "AI Indian Stock Research Platform Backend",
+    "main": "src/server.js",
+    "scripts": {
+        "start": "node src/server.js",
+        "dev": "nodemon src/server.js"
+    },
+    "keywords": [
+        "stocks",
+        "india",
+        "finance",
+        "ai"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@google/generative-ai": "^0.24.1",
+        "axios": "^1.18.1",
+        "cors": "^2.8.6",
+        "dotenv": "^16.6.1",
+        "express": "^4.22.2",
+        "mongoose": "^7.8.10",
+        "stock-nse-india": "^1.4.0",
+        "xml2js": "^0.5.0",
+        "yahoo-finance2": "^3.15.4"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.14"
+    }
+}
