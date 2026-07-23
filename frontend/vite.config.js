@@ -21,7 +21,9 @@ export default defineConfig({
         strictPort: false
     },
     build: {
-        minify: 'terser',
-        outDir: 'dist'
+        outDir: 'dist',
+        // ✅ FIXED: explicitly use esbuild for minification
+        // (avoids "terser not found" error since terser is an optional dependency)
+        minify: 'esbuild'
     }
 })
