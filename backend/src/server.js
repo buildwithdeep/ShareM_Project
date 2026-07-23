@@ -160,6 +160,14 @@ app.use((req, res, next) => {
  * ROUTES CONFIGURATION
  * ============================================
  */
+// Render/Browser jab "/" pe hit karega to 404 na aaye isliye
+app.get("/", (req, res) => {
+    res.status(200).json({
+        success: true,
+        message: "🚀 AI Stock Research Backend is running",
+        docs: "/api/status",
+    });
+});
 
 // ✅ HEALTH CHECK ENDPOINT
 // Check karne ke liye ki server alive hai
