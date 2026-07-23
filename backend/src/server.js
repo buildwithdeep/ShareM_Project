@@ -69,27 +69,18 @@ const app = express();
 // ✅ CORS CONFIGURATION
 // Frontend ko backend se connect karne dena
 const corsOptions = {
-    // Frontend jo URLs ho sakte hain
     origin: [
-        "http://localhost:3000", // Next.js dev
-        "http://localhost:3001", // Alternate dev
-        "http://localhost:5173", // Vite dev ← IMPORTANT
-        "http://localhost:5174", // Vite fallback
-        "http://127.0.0.1:5173", // Localhost variant
-        "http://127.0.0.1:3000", // Localhost variant
-        "http://localhost:8000", // Flask/Python dev
-        // Production URLs (baad mein add karna)
-        // 'https://yourdomain.com',
-        // 'https://app.yourdomain.com',
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://127.0.0.1:5173",
+        "http://127.0.0.1:3000",
+        "http://localhost:8000",
+        "https://sharem-project.onrender.com", // ✅ ye line add karo
     ],
-
-    // Credentials allow karna (cookies, auth headers)
     credentials: true,
-
-    // HTTP methods allow karna
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"],
-
-    // Headers allow karna
     allowedHeaders: [
         "Content-Type",
         "Authorization",
@@ -97,11 +88,7 @@ const corsOptions = {
         "Accept",
         "Origin",
     ],
-
-    // Browser ko preflight request cache rakhne dena (86400 = 24 hours)
     maxAge: 86400,
-
-    // Response headers ko expose karna
     exposedHeaders: ["Content-Length", "X-JSON-Response"],
 };
 
